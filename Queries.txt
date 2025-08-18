@@ -34,5 +34,6 @@ come(aguila,Que).
 comida(X).
 3. ¿Es el gato un mamífero o
 un ave?
-granja(oveja).
+mamifero(gato);ave(gato)
+
 
