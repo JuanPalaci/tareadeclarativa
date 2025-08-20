@@ -1,0 +1,40 @@
+----------
+Ejercicio 2
+------------- 
+1. ¿Qué come el pingüino?
+come(pinguino,Que).
+ 2. ¿Qué animales son comida del águila?
+comida(X).
+3. ¿Es el loro un ave?
+ave(loro)
+----------
+Ejercicio 3
+-------
+1. ¿Qué come el conejo?
+come(conejo,Que). 
+2. ¿Qué animales son comida del gato?
+comida(X). 
+3. ¿Es el perro un animal doméstico?
+domestico(perro).
+---------------
+Ejercicio 4
+--------
+1. ¿Qué come el cerdo?
+come(cerdo,Que).
+2. ¿Qué animales son comida del cerdo?
+comida(X).
+3. ¿Es la oveja un animal de granja?
+granja(oveja).
+-----------
+Ejercicio 5
+-------------
+1. ¿Qué come el águila? 
+come(aguila,Que).
+2. ¿Qué animales son comida del león? 
+comida(X).
+3. ¿Es el gato un mamífero o
+un ave?
+mamifero(gato);
+
+
+
