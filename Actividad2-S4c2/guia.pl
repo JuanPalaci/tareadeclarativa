@@ -91,3 +91,15 @@ sistema_calificaciones(Lista, Max, Min, Prom) :-
     nota_maxima(Lista, Max),
     nota_minima(Lista, Min),
     promedio_notas(Lista, Prom).
+
+%Ejercicio 7 Unificacion de estructuras
+%Datos
+padre(jacobo,kattia).
+padre(jacobo,osegueda).
+padre(oscar,pepinesa).
+padre(oscar,mostaza).
+
+es_hermano(X,Y) :-
+    X \= Y,
+    padre(P,X),
+    padre(P,Y).
