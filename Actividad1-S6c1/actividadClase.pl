@@ -115,3 +115,8 @@ primo_amigo(X, Y) :- amigo(X, Y).
 primo_amigo(X, Y) :- amigo(Y, X).
 primo_amigo(X, Y) :- prima(Z, X), es_amigo(Z, Y).
 primo_amigo(X, Y) :- prima(X, Z), es_amigo(Y, Z).
+
+%resumen 
+%Las rutinas por dia se modelaron con el predicado rutina(Persona, Dia, Actividad), lo que permite asociar a cada persona con lo que hace en un dia especifico.
+%  por ejemplo, se refleja que Juan estudia entre semana y descansa fines de semana, 
+% mientras Pedro trabaja de lunes a viernes y juega futbol el sabado. 
