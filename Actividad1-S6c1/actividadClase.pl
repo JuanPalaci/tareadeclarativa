@@ -13,6 +13,8 @@ descansa(maria).
 hermano(ana,pedro).
 prima(maria,sofia).
 amigo(juan,ana).
+amigo(maria, juan).
+
 
 %hechos de rutinas
 % Ana cocina todos los días salvo cuando está cansada
@@ -76,3 +78,40 @@ parentesco(X, Y) :- hermano(X, Y).
 parentesco(X, Y) :- hermano(Y, X).  
 parentesco(X, Y) :- prima(X, Y).
 parentesco(X, Y) :- prima(Y, X).     
+
+% Parte 3
+% Regla amistad general
+% Caso base, si X y Y son amigos directos
+es_amigo(X, Y) :- amigo(X, Y).
+es_amigo(X, Y) :- amigo(Y, X).
+    
+% Caso general, buscar a un amigo de Z y revisar si es amigo de X por recursion
+es_amigo(X, Y) :- amigo(Z, Y), es_amigo(X, Z).
+es_amigo(X, Y) :- amigo(Y, Z), es_amigo(X, Z).
+es_amigo(X, Y) :- amigo(Z, Y), es_amigo(Z, X).
+es_amigo(X, Y) :- amigo(Y, Z), es_amigo(Z, X).
+
+% Miembro de una lista
+miembro(X, [X|_]).
+miembro(X, [_| T]) :- miembro(X, T). 
+
+actividad(X, Y, Z) :- rutina(X, Y, Z).
+
+% Parte 5
+cocina(luis).
+
+prima(maria, luis).
+
+rutina(luis, lunes, cocina).
+rutina(luis, martes, descansa).
+rutina(luis, miercoles, cocina).
+rutina(luis, jueves, descansa).
+rutina(luis, viernes, cocina).
+rutina(luis, sabado, descansa).
+rutina(luis, domingo, descansa).
+
+% Los amigos de primos son amigos
+primo_amigo(X, Y) :- amigo(X, Y).
+primo_amigo(X, Y) :- amigo(Y, X).
+primo_amigo(X, Y) :- prima(Z, X), es_amigo(Z, Y).
+primo_amigo(X, Y) :- prima(X, Z), es_amigo(Y, Z).
