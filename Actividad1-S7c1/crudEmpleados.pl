@@ -57,7 +57,28 @@ eliminar_todos :-
 agregar_unico(Nombre, Departamento, Salario) :-
     (   departamento(Nombre, Departamento)
     ->  format('El empleado ~w ya está esclavizado en ~w.~n', [Nombre, Departamento])
-    ;   assert(departamento(Nombre, Curso)),
+    ;   assert(departamento(Nombre, Departamento)),
     assert(salario(Nombre, Salario)),
         format('Se ha agregado a ~w en el departamento ~w.~n', [Nombre, Departamento])
     ).
+
+main :- writeln('📘 SISTEMA DE EMPLEADOS INICIADO'),
+        writeln('========= MENÚ ========='),
+        writeln('1. Listar empleados'),
+        writeln('2. Agregar empleado'),
+        writeln('3. Eliminar empleado'),
+        writeln('4. Actualizar empleado'),
+        writeln('5. Agregar con validación'),
+        writeln('6. Eliminar todos'),
+        writeln('0. Salir'),
+        writeln('========================'),
+        writeln('Seleccione una opción:'),
+        read(X),
+        (X == 1 -> listar_empleados 
+            ; X == 2 -> writeln('Nombre: '), read(Nombre), writeln('Departamento: '), read(Departamento), writeln('Salario: '), read(Salario), agregar_empleado(Nombre, Departamento,Salario) 
+                ; X == '3' -> listar_empleados 
+                    ; X == '4' -> listar_empleados 
+                        ; X == '5' -> listar_empleados 
+                            ; X == '6' -> listar_empleados ; listar_empleados             
+        ).
+main.
