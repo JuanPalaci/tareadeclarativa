@@ -61,7 +61,6 @@ agregar_unico(Nombre, Departamento, Salario) :-
     assert(salario(Nombre, Salario)),
         format('Se ha agregado a ~w en el departamento ~w.~n', [Nombre, Departamento])
     ).
-
 main :- writeln('📘 SISTEMA DE EMPLEADOS INICIADO'),
         writeln('========= MENÚ ========='),
         writeln('1. Listar empleados'),
